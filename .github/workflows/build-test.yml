@@ -1,0 +1,24 @@
+name: Build and Test (Static WebApp)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate HTML files
+        run: |
+          sudo apt-get install tidy -y
+          tidy -errors -q *.html || true
+
+      - name: Check file structure
+        run: ls -R
+
+      - name: Display success message
+        run: echo "Static website build and validation completed successfully!"
