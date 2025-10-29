@@ -1,0 +1,26 @@
+{
+  "name": "webappproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iqballakho07/WebAppProject.git"
+  },
+   "scripts": {
+  "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iqballakho07/WebAppProject/issues"
+  },
+  "homepage": "https://github.com/iqballakho07/WebAppProject#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

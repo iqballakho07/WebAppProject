@@ -1,24 +1,21 @@
-name: Build and Test (Static WebApp)
+name: Build and Test
 
-on:
-  push:
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Validate HTML files
-        run: |
-          sudo apt-get install tidy -y
-          tidy -errors -q *.html || true
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-      - name: Check file structure
-        run: ls -R
+      - name: Install dependencies
+        run: npm install
 
-      - name: Display success message
-        run: echo "Static website build and validation completed successfully!"
+      - name: Run Tests
+        run: npm test
